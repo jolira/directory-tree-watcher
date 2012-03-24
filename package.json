@@ -1,0 +1,35 @@
+{
+    "name":"directory-tree-watcher",
+    "version":"0.0.1",
+    "description":"Using the fs.watch(..) command to keep track of changes in directory trees",
+    "keywords":["watch", "file"],
+    "author":"Joachim Kainz <jfk@jolira.com> (http://www.jolira.com)",
+    "repository":{
+        "url":"https://github.com/jolira/directory-tree-watcher.git",
+        "type":"git"
+    },
+    "dependencies":{
+        "batch":"*"
+    },
+    "bin": {
+        "file-watcher": "./bin/directory-tree-watcher"
+    },
+    "devDependencies":{
+        "debug":"*",
+        "horaa":"*",
+        "vows":"*",
+        "jake":"*"
+    },
+    "scripts":{
+        "test":"jake test",
+        "prepublish":"npm prune"
+    },
+    "bugs":{
+        "mail":"dev@jolira.com",
+        "url":"http://github.com/jolira/directory-tree-watcher/issues"
+    },
+    "main":"index",
+    "engines":{
+        "node":">= 0.6.0"
+    }
+}

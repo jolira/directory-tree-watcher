@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+(function (process) {
+    "use strict";
+
+    var watch = require("../index.js"),
+        i;
+
+    for(i=2; i<process.argv.length; i++) {
+        var file = process.argv[i];
+
+        console.log("watching", file);
+
+        watch(file, function(){
+            console.log("watcher:", arguments);
+        });
+    }
+})(process);
