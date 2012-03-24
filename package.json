@@ -15,7 +15,6 @@
         "file-watcher": "./bin/directory-tree-watcher"
     },
     "devDependencies":{
-        "debug":"*",
         "horaa":"*",
         "vows":"*",
         "jake":"*"
