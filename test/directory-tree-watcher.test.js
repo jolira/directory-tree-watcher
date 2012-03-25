@@ -1,27 +1,24 @@
 /*jslint white: true, forin: false, node: true, indent: 4 */
-(function (module) {
+(function (module, __dirname) {
     "use strict";
 
-    var horaa = require('horaa'),
-        vows = require('vows'),
-        fs = horaa('fs');
-
-    fs.hijack('watch', function (file, encoding, cb) {
-    });
+    var vows = require('vows'),
+        watch = require("../lib/directory-tree-watcher");
 
     // Create a Test Suite
-    vows.describe('debug').addBatch({
+    vows.describe('watch').addBatch({
         'with output turned on': {
             topic: function () {
-                this.callback();
+                watch(__dirname, function(){}, this.callback);
             },
-            'with output turned off': {
-                "topic": function () {
+            'the test directory': {
+                "topic": function (watcher) {
+                    watcher.close();
                     this.callback();
                 },
-                "restore debug settings": function () {
+                "closed": function () {
                 }
             }
         }
     }).export(module);
-})(module);
+})(module, __dirname);
