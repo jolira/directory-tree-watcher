@@ -2,8 +2,12 @@
 (function (module) {
     "use strict";
 
-    var NODE_DEBUG = process.env.NODE_DEBUG,
-        vows = require('vows');
+    var horaa = require('horaa'),
+        vows = require('vows'),
+        fs = horaa('fs');
+
+    fs.hijack('watch', function (file, encoding, cb) {
+    });
 
     // Create a Test Suite
     vows.describe('debug').addBatch({
