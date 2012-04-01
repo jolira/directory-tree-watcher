@@ -10,7 +10,12 @@
 
         console.log("watching", file);
 
-        watch(file, function(){
+        watch(file, {
+            except: [
+                "node_modules",
+                ".git"
+            ]
+        }, function(){
             console.log("watcher:", arguments);
         });
     }

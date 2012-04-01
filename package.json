@@ -1,6 +1,6 @@
 {
     "name":"directory-tree-watcher",
-    "version":"0.0.4",
+    "version":"0.0.5",
     "description":"Using the fs.watch(..) command to keep track of changes in directory trees",
     "keywords":["watch", "file"],
     "author":"Joachim Kainz <jfk@jolira.com> (http://www.jolira.com)",
