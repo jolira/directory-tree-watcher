@@ -9,7 +9,7 @@
     vows.describe('watch').addBatch({
         'with output turned on': {
             topic: function () {
-                watch(__dirname, function(){}, this.callback);
+                watch(__dirname, {}, function(){}, this.callback);
             },
             'the test directory': {
                 "topic": function (watcher) {
